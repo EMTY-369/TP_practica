@@ -24,9 +24,9 @@ void cargar_clientes_pedidos(const char * file_name, Cliente *&arr_clientes, int
                              Plato *&arr_platos, int n_platos);
 int buscar_cliente(Cliente * arr_clientes, int dni_leido, int n_clientes);
 int buscar_plato(Plato *&arr_platos, char * cod_plato_leido, int n_platos);
-void ordenar_clientes_nombre(Cliente * arr_clientes, int n_clientes);
+void ordenar_clientes_nombre(Cliente *&arr_clientes, int n_clientes);
 void swap_struc( Cliente & a,  Cliente & b);
-void ordenar_platos_pedidos(Cliente * arr_clientes, int n_clientes);
+void ordenar_platos_pedidos(Cliente *&arr_clientes, int n_clientes);
 void swap_struc_pedidos( PlatoPedido & a, PlatoPedido & b);
 void imprimir_reporte(const char * file_name, Cliente * arr_clientes, int n_clientes, Plato *arr_platos, int n_platos);
 void imprimir_titulo( ofstream & output);

@@ -51,7 +51,7 @@ void swap_struc_pedidos( PlatoPedido & a, PlatoPedido & b) {
     b = aux;
 }
 
-void ordenar_platos_pedidos(Cliente * arr_clientes, int n_clientes) {
+void ordenar_platos_pedidos(Cliente *&arr_clientes, int n_clientes) {
     for (int i = 0; i < n_clientes; i++) {
 
         for (int j = 0; j < arr_clientes[i].cantidadDePedidos+1; j++) {
@@ -73,10 +73,10 @@ void swap_struc( Cliente & a,  Cliente & b) {
     a=aux;
 }
 
-void ordenar_clientes_nombre(Cliente * arr_clientes, int n_clientes) {
+void ordenar_clientes_nombre(Cliente *&arr_clientes, int n_clientes) {
     for (int i = 0; i < n_clientes-1; i++) {
         for (int j = i+1; j < n_clientes; j++) {
-            if (strcmp(arr_clientes[i].nombre, arr_clientes[j].nombre) == 0) {
+            if (strcmp(arr_clientes[i].nombre, arr_clientes[j].nombre) > 0) {
                 swap_struc(arr_clientes[i], arr_clientes[j]);
             }
         }
