@@ -195,7 +195,7 @@ void inicializar_lista_categorias( struct ListaCategoria & lista_categorias) {
 char * leer_cadena( ifstream & input, char del) {
     char buffer[100]{}, *candena;
     input.getline(buffer, 100, del);
-    if ( input.eof() ) return candena = nullptr;
+    if ( input.eof() ) return nullptr;
     candena = new char[strlen(buffer)+1];
     strcpy(candena, buffer);
     return candena;
