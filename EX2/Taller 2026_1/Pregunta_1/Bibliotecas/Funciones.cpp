@@ -86,7 +86,7 @@ void cargar_transacciones(const char * file_name, Cliente *&cliente, int n_clien
                 cliente[pos_cliente].cuentas[pos_cuenta].saldoFinal -= monto;
             }
             char estado1[]="HABILITADO", estado2[]="INHABILITADO";
-            delete cliente[pos_cliente].cuentas[pos_cuenta].estado;
+            delete [] cliente[pos_cliente].cuentas[pos_cuenta].estado;
             if (cliente[pos_cliente].cuentas[pos_cuenta].saldoFinal>=0) cliente[pos_cliente].cuentas[pos_cuenta].estado = asignar_cadena(estado1);
             else cliente[pos_cliente].cuentas[pos_cuenta].estado = asignar_cadena(estado2);
             cliente[pos_cliente].cuentas[pos_cuenta].cantidadTransacciones++;
@@ -218,9 +218,9 @@ char *extraer_nombre(ifstream &input) {
     strcat(nombre_completo, palabra3);
     strcat(nombre_completo, "/");
     strcat(nombre_completo, palabra1);
-    delete palabra1;
-    delete palabra2;
-    delete palabra3;
+    delete [] palabra1;
+    delete [] palabra2;
+    delete [] palabra3;
     return asignar_cadena(nombre_completo);
 }
 
